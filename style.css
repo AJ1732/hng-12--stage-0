@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --accent: #ad0013;
+  --shade-200: #f2f4f7;
+  --grey-400: #2f2f2f;
+  --foreground: #0f0f0f;
+  --background: #f8f8f8;
+
+  --heading-font: "Crimson Pro", serif;
+  --body-font: "Urbanist", serif;
+}
+
+html {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+body {
+  max-width: 44rem;
+  min-height: 100svh;
+  padding: 4rem 1.5rem;
+  margin-inline: auto;
+  font-family: var(--body-font);
+}
+
+header {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-wrap: pretty;
+  text-transform: uppercase;
+}
+
+main {
+  width: 100%;
+  padding: 0.125rem;
+  background-color: var(--shade-200);
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  gap: 0.125rem;
+}
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+figure {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1/1;
+  padding: 0 !important;
+}
+@media (min-width: 768px) {
+  figure {
+    grid-column: 2 / -1;
+  }
+}
+
+img {
+  width: 100%;
+  background-position: center;
+  object-position: center;
+  margin-top: -2.5rem;
+}
+
+h2[data-testid="jobTitle"] {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+}
+
+ul,
+ol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+
+  list-style: inside;
+  white-space: nowrap;
+}
+
+ul li::marker,
+ol li::marker {
+  color: var(--grey-400);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  width: fit-content;
+}
+a:hover,
+a:active,
+a:visited {
+  color: var(--accent);
+  text-decoration: underline;
+}
+a[data-testid="emailAddress"] {
+  font-size: 1.125rem;
+}
+
+.icon {
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+}
+
+.grid__item {
+  background-color: var(--background);
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+.grid__item--bio {
+  line-height: 1.75;
+}
+.grid__item--geo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.grid__item--geo p:nth-child(1) {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: 0.25rem;
+  line-height: 1.5;
+}
+.grid__item--geo p:nth-child(1) span:first-child {
+  display: block;
+  width: 0.5rem;
+  margin-top: 0.475rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--accent);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.grid__item--geo p:nth-child(2) {
+  padding-left: 1.25rem;
+}
+@media (min-width: 768px) {
+  .grid__item--geo p:nth-child(2) {
+    padding-left: 1.125rem;
+  }
+}
+.grid__item:nth-child(2) {
+  color: var(--background);
+  text-transform: uppercase;
+  background-color: var(--accent);
+}
+.grid__item:nth-child(2) h1 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .grid__item:nth-child(2) {
+    grid-row: 1 / span 2;
+  }
+  .grid__item:nth-child(2) h1 {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+  .grid__item--bio {
+    grid-column: 1 / span 2;
+  }
+  .grid__item:last-child {
+    grid-column: 1 / -1;
+  }
+}

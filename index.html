@@ -3,11 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AJ1732 Profile Card</title>
+    <!-- ADDED META TAGS -->
+    <meta name="author" content="Ejemen Iboi" />
+    <meta name="description" content="Ejemen Iboi - Software Engineer" />
+    <!-- OPEN GRAPH PROTOCOL -->
+    <meta property="og:title" content="Ejemen Iboi" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://1732-hng-12-stage-0.netlify.app/"
+    />
+    <meta
+      property="og:description"
+      content="Ejemen Iboi Frontend Engineer Profile Card"
+    />
+    <meta
+      property="og:image"
+      content="./favicon_io/android-chrome-512x512.png"
+    />
+    <!-- LINK FAVICON ICON -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="./favicon_io/android-chrome-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./favicon_io/android-chrome-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
+
+    <!-- TITLE -->
+    <title>Ejemen Iboi Profile Card</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>HNG Stage 0</header>
+    <header>HNG Stage 0 Profile Card</header>
+
+    <main>
+      <!-- PROFILE IMG -->
+      <figure class="grid__item grid__item--profile">
+        <img
+          src="./img/profile.jpg"
+          alt="Profile Image"
+          data-testid="profilePicture"
+        />
+      </figure>
+
+      <!-- FULLNAME -->
+      <div class="grid__item">
+        <h1 data-testid="fullName">Ejemen Iboi</h1>
+      </div>
+
+      <!-- JOB TITLE -->
+      <div class="grid__item">
+        <h2 data-testid="jobTitle">Frontend Engineer</h2>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="grid__item">
+        <a
+          href="mailto:ejemeniboi@gmail.com"
+          rel="noopener noreferrer"
+          data-testid="emailAddress"
+        >
+          ejemeniboi@gmail.com
+        </a>
+      </div>
+
+      <!-- SHORT BIOGRAPHY -->
+      <div class="grid__item grid__item--bio">
+        <p data-testid="shortBio">
+          Specialized in building PIXEL-PERFECT, responsive, user-centric
+          interfaces with expertise in modern technologies. Skilled in building
+          single-page applications and interactive prototypes, with a strong eye
+          for detail and a passion for continuous improvement.
+        </p>
+      </div>
+
+      <!-- LOCATION AND CURRENT TIME IN UTC -->
+      <div class="grid__item grid__item--geo">
+        <p>
+          <span class="pulse"></span>
+          <span data-testid="currentTimeUTC">Current Time in UTC</span>
+        </p>
+        <p data-testid="currentLocation">Edo State, Nigeria.</p>
+      </div>
+
+      <!-- SOCIAL LINKS -->
+      <div class="grid__item">
+        <ul>
+          <li>
+            <a
+              href="https://1732-portfolio.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="socialLinks"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/osezeleiboi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="socialLinks"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/AJ1732"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="socialLinks"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://x.com/ejemeniboi"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="socialLinks"
+              >Twitter</a
+            >
+          </li>
+        </ul>
+      </div>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
